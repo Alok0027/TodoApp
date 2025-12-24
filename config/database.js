@@ -4,13 +4,12 @@ require('dotenv').config();
 
 const connectDB = () => {
     mongoose.connect(process.env.DATABASE_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
     })
     .then(() => console.log("Database is connected successfully"))
     .catch( (error) => {
         console.log("Database sucked");
         console.error(error.message);
+        //?
         process.exit(1);
         } );
     }
